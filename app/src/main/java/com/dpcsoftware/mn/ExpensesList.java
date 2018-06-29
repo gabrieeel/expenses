@@ -438,23 +438,24 @@ public class ExpensesList extends AppCompatActivity implements OnItemClickListen
 	    }
 	    
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
-            return mInflater.inflate(R.layout.expenseslist_listitem,parent,false); 
+            return mInflater.inflate(R.layout.expenseslist_listitem, parent, false);
         }
     	
     	public void bindView(View view, Context context, Cursor cursor) {
-    		((TextView) view.findViewById(R.id.textView1)).setText(cursor.getString(0));
+			TextView tvDescription = ((TextView) view.findViewById(R.id.tv_description));
+			String desc = cursor.getString(4);
+			if (desc.isEmpty()) {
+				tvDescription.setVisibility(View.GONE);
+			} else {
+				tvDescription.setText(desc);
+				tvDescription.setVisibility(View.VISIBLE);
+			}
+
     		((ImageView) view.findViewById(R.id.imageView1)).getDrawable().setColorFilter(cursor.getInt(1), App.colorFilterMode);
     		((TextView) view.findViewById(R.id.textView2)).setText(app.printMoney( cursor.getFloat(2)));
     		((TextView) view.findViewById(R.id.textView3)).setText(App.dateToUser(null, cursor.getString(3)));
-    		TextView tvObs = ((TextView) view.findViewById(R.id.textView4));
-    		String obs = cursor.getString(4);
-    		if(obs.isEmpty())
-    			tvObs.setVisibility(View.GONE);
-    		else {
-    			tvObs.setText(obs);
-    			tvObs.setVisibility(View.VISIBLE);
-    		}
-    		
+			((TextView) view.findViewById(R.id.textView4)).setText(cursor.getString(0));
+
     		if(selectedIds.contains(cursor.getLong(5)))
     			selectItem(view,-1);
     		else

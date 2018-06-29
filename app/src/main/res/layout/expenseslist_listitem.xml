@@ -34,14 +34,13 @@
         android:contentDescription="@string/gp_1" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView1"
         android:layout_toRightOf="@+id/imageView1"
         android:paddingLeft="3dp"
-        android:paddingRight="2dp"
-        android:textSize="6pt" />
+        android:paddingRight="2dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -49,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/imageView1"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@id/tv_description"
         android:gravity="right"
         android:textStyle="bold" />
 
