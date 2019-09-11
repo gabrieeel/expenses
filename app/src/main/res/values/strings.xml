@@ -36,8 +36,8 @@
     
     
     <!-- English Translation (Standard Language) -->
-    <string name="app_name">Expenses</string>
-    <string name="title_activity_main">Expenses</string>
+    <string name="app_name">Mega Hyper Expenses</string>
+    <string name="title_activity_main">Mega Hyper Expenses</string>
     <string name="standard_currency">$</string>
     <bool name="standard_currency_pos">true</bool>
     
